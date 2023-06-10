@@ -1,3 +1,4 @@
+import 'package:ecommerce_sqflite/constants/app_consts.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ Widget MealsDescription(BuildContext context, MealModel meal) {
         Padding(
           padding: EdgeInsets.only(top: 10.0),
           child: Text(
-              "${meal.name}: meal fried meat smoked delicious meal for family and friend dont passed shrimp donuts sweet tomato wine coconuts for each meal drink food"),
+              "${meal.name}:${AppConstants.mealdescription}"),
         )
       ],
     ),

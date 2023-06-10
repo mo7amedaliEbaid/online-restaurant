@@ -3,8 +3,8 @@ import 'package:ecommerce_sqflite/models/meal_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
-import '../../constants/global_consts.dart';
-import 'mybutton_widget.dart';
+import '../../../constants/global_consts.dart';
+import 'mybutton_widgets.dart';
 Widget BottomBar(BuildContext context,AppController controller,MealModel meal){
   Size size=MediaQuery.of(context).size;
   return Container(

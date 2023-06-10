@@ -2,15 +2,38 @@
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
-import 'package:ecommerce_sqflite/ui/widgets/myappbar_widget.dart';
+import 'package:ecommerce_sqflite/ui/widgets/app_widgets/myappbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pay/pay.dart';
 
-class CartScreen extends StatelessWidget {
-  getItemTotal(List<MealModel> items) {
+class CartScreen extends StatefulWidget {
+  @override
+  State<CartScreen> createState() => _CartScreenState();
+}
+
+class _CartScreenState extends State<CartScreen> {
+  late final Future<PaymentConfiguration> _googlePayConfigFuture;
+  List<PaymentItem> _paymentItems = [
+    PaymentItem(
+      label: 'Total',
+      amount: '99.99',
+      status: PaymentItemStatus.final_price,
+    )
+  ];
+  @override
+  void initState() {
+    super.initState();
+    _googlePayConfigFuture =
+        PaymentConfiguration.fromAsset('pay.json');
+  }
+ getItemTotal(List<MealModel> items) {
     double sum = 0.0;
     items.forEach((e){sum += e.price;});
     return "\$$sum";
+  }
+  void onGooglePayResult(paymentResult) {
+    debugPrint(paymentResult.toString());
   }
 
   @override
@@ -72,23 +95,28 @@ class CartScreen extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               height: 50,
-              color: Colors.transparent,
-              child: ElevatedButton(
-                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(appbarcolor)),
-                  onPressed: () {},
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: 40,
-                    width: 100,
-                    child: Text("Checkout", style: TextStyle(fontSize: 18),),
+              child: FutureBuilder<PaymentConfiguration>(
+                  future: _googlePayConfigFuture,
+                  builder: (context, snapshot) => snapshot.hasData
+                      ? GooglePayButton(
+                    paymentConfiguration: snapshot.data!,
+                    paymentItems: _paymentItems,
+                    type: GooglePayButtonType.buy,
+                    margin: const EdgeInsets.all( 5.0),
+
+                    onPaymentResult: onGooglePayResult,
+                    loadingIndicator: const Center(
+                      child: CircularProgressIndicator(),
+                    ),
                   )
-              ),
+                      : Container()),
             )
           ],
         ),
       ),
     );
   }
+
   Widget generateCart(BuildContext context, MealModel d) {
     Size size=MediaQuery.of(context).size;
     return Padding(

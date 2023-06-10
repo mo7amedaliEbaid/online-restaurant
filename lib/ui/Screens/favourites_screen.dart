@@ -1,7 +1,7 @@
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
-import 'package:ecommerce_sqflite/ui/widgets/myappbar_widget.dart';
+import 'package:ecommerce_sqflite/ui/widgets/app_widgets/myappbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

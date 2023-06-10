@@ -1,4 +1,4 @@
-import 'package:ecommerce_sqflite/ui/Screens/home_screen.dart';
+import 'package:ecommerce_sqflite/ui/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main(){
@@ -10,7 +10,7 @@ class MyRestaurant extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }

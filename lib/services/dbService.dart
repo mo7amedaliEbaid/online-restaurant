@@ -12,7 +12,7 @@ class DbHandler {
       String path = join(databasesPath, 'restaurant.db');
       db = await openDatabase(
         path,
-        version: 2,
+        version: 1,
         onCreate: (Database db, int version) async {
           print(db);
           this.db = db;

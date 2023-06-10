@@ -37,6 +37,7 @@ dependencies:
   get: ^4.6.5
   sqflite: ^2.0.3
   shared_preferences: ^2.1.1
+  pay: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +71,9 @@ flutter:
     - assets/meals/sousedchicken.jpg
     - assets/meals/special_launch.jpg
     - assets/meals/sweet_donuts.jpg
+    - assets/app_images/splash.jpg
+    - assets/app_images/splash2.jpg
+    - assets/pay.json
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

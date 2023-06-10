@@ -1,15 +1,15 @@
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
-import 'package:ecommerce_sqflite/ui/widgets/bottombar_widget.dart';
-import 'package:ecommerce_sqflite/ui/widgets/favicon_widget.dart';
-import 'package:ecommerce_sqflite/ui/widgets/mealdescription_widget.dart';
-import 'package:ecommerce_sqflite/ui/widgets/myappbar_widget.dart';
+import 'package:ecommerce_sqflite/ui/widgets/app_widgets/bottombar_widget.dart';
+import 'package:ecommerce_sqflite/ui/widgets/app_widgets/favicon_widget.dart';
+import 'package:ecommerce_sqflite/ui/widgets/app_widgets/mealdescription_widget.dart';
+import 'package:ecommerce_sqflite/ui/widgets/app_widgets/myappbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../constants/app_consts.dart';
-import '../widgets/mybutton_widget.dart';
-import '../widgets/dotsindicator_widget.dart';
+import '../widgets/app_widgets/mybutton_widgets.dart';
+import '../widgets/app_widgets/dotsindicator_widget.dart';
 
 class MealDetailsScreen extends StatefulWidget {
   final int mealId;

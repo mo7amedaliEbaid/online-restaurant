@@ -3,9 +3,9 @@ import 'package:ecommerce_sqflite/ui/Screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
-import '../../constants/global_consts.dart';
-import '../../controller/app_controller.dart';
-import '../Screens/cart_screen.dart';
+import '../../../constants/global_consts.dart';
+import '../../../controller/app_controller.dart';
+import '../../Screens/cart_screen.dart';
 
 PreferredSizeWidget MyAppBar(BuildContext context, AppController controller,
     bool iscarticon, bool isfavicon, String title) {
@@ -13,7 +13,7 @@ PreferredSizeWidget MyAppBar(BuildContext context, AppController controller,
   return AppBar(
     title: Text(
       title,
-      style: bigwhite,
+      style: bigwhiteindie,
     ),
     centerTitle: true,
     backgroundColor: appbarcolor,

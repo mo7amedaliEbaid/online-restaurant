@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../models/meal_model.dart';
-import '../Screens/mealdetails_screen.dart';
+import '../../../models/meal_model.dart';
+import '../../Screens/mealdetails_screen.dart';
 
 Widget MealItem(BuildContext context, MealModel meal) {
   Size size = MediaQuery.of(context).size;
