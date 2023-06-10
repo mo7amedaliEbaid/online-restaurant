@@ -31,6 +31,9 @@ class AppController extends GetxController {
   bool isAlreadyInCart(id) {
     return cartmeals.indexWhere((element) => element.shopId == id) > -1;
   }
+  bool isAlreadyInFavLIST(id) {
+    return favmeals.indexWhere((element) => element.shopId == id) > -1;
+  }
 
   getCardList() async{
     try {

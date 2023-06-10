@@ -1,41 +1,124 @@
 
+import 'package:ecommerce_sqflite/constants/global_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
+import 'package:ecommerce_sqflite/ui/widgets/myappbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class CartScreen extends StatelessWidget {
+  getItemTotal(List<MealModel> items) {
+    double sum = 0.0;
+    items.forEach((e){sum += e.price;});
+    return "\$$sum";
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final controller = Get.find<AppController>();
+    return Scaffold(
+      backgroundColor: scafoldcolor,
+      appBar: MyAppBar(context, controller,false,true,"Cart"),
+      body: Column(
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: GetBuilder<AppController>(
+                builder: (_) {
+                  if (controller.cartmeals.length == 0) {
+                    return Padding(
+                      padding: const EdgeInsets.all(28.0),
+                      child: Center(
+                        child: Text("No items found",style: blackindiestyle,),
+                      ),
+                    );
+                  }
+                  return ListView(
+                    shrinkWrap: true,
+                    children: controller.cartmeals
+                        .map((d) => generateCart(context, d))
+                        .toList(),
+                  );
+                },
+              ),
+            ),
+          ),
+        ],
+      ),
+      bottomNavigationBar: Container(
+        color: Colors.grey.shade200,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+                child: GetBuilder<AppController>(
+                  builder: (_) {
+                    return RichText(
+                      text: TextSpan(
+                          text: "Total  ",
+                          style: blackstyle,
+                          children: <TextSpan>[
+                            TextSpan(
+                                text: getItemTotal(controller.cartmeals).toString(),
+                                //style: blackstyle
+                            )
+                          ]
+                      ),
+                    );
+                  },
+                )
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              height: 50,
+              color: Colors.transparent,
+              child: ElevatedButton(
+                style: ButtonStyle(backgroundColor: MaterialStateProperty.all(appbarcolor)),
+                  onPressed: () {},
+                  child: Container(
+                    alignment: Alignment.center,
+                    height: 40,
+                    width: 100,
+                    child: Text("Checkout", style: TextStyle(fontSize: 18),),
+                  )
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
   Widget generateCart(BuildContext context, MealModel d) {
+    Size size=MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: Container(
         decoration: BoxDecoration(
-            color: Colors.white12,
+            color: Colors.grey.shade300,
             border: Border(
-              bottom: BorderSide(color: Colors.grey.shade100, width: 1.0),
-              top: BorderSide(color: Colors.grey.shade100, width: 1.0),
+              bottom: BorderSide(color: Colors.grey.shade200, width: 1.0),
+              top: BorderSide(color: Colors.grey.shade200, width: 1.0),
             )),
-        height: 100.0,
+        height:size.width<480?size.height*.18:size.height*.3,
         child: Row(
+          //crossAxisAlignment: CrossAxisAlignment.center,
+         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
               alignment: Alignment.topLeft,
-              height: 100.0,
-              width: 100.0,
+              height: 150.0,
+              width: 200.0,
               decoration: BoxDecoration(
                   boxShadow: [
-                    BoxShadow(color: Colors.black12, blurRadius: 5.0)
+                    BoxShadow(color: Colors.white24, blurRadius: 5.0)
                   ],
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(10.0),
-                      bottomRight: Radius.circular(10.0)),
                   image: DecorationImage(
-                      image: AssetImage(d.image), fit: BoxFit.fitHeight)),
+                      image: AssetImage(d.image), fit: size.width<480?BoxFit.fitHeight:BoxFit.fitWidth)),
             ),
             Expanded(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 10.0, left: 15.0),
+                  padding:size.width<480? EdgeInsets.only(top: 30.0, left: 15.0):EdgeInsets.only(top: 30.0, left: 100.0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
@@ -44,8 +127,7 @@ class CartScreen extends StatelessWidget {
                           Expanded(
                             child: Text(
                               d.name,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 15.0),
+                              style:blackstyle,
                             ),
                           ),
                           Container(
@@ -77,91 +159,6 @@ class CartScreen extends StatelessWidget {
                   ),
                 ))
           ],
-        ),
-      ),
-    );
-  }
-
-
-  getItemTotal(List<MealModel> items) {
-    double sum = 0.0;
-    items.forEach((e){sum += e.price;});
-    return "\$$sum";
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final controller = Get.find<AppController>();
-
-    // TODO: implement build
-    return Scaffold(
-      appBar: AppBar(
-        title: Text("Cart list"),
-      ),
-      body: Column(
-        children: [
-          Expanded(
-            child: SingleChildScrollView(
-              child: GetBuilder<AppController>(
-                builder: (_) {
-                  if (controller.cartmeals.length == 0) {
-                    return Center(
-                      child: Text("No item found"),
-                    );
-                  }
-                  return ListView(
-                    shrinkWrap: true,
-                    children: controller.cartmeals
-                        .map((d) => generateCart(context, d))
-                        .toList(),
-                  );
-                },
-              ),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: Container(
-        color: Colors.white,
-        child: SafeArea(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                  child: GetBuilder<AppController>(
-                    builder: (_) {
-                      return RichText(
-                        text: TextSpan(
-                            text: "Total  ",
-                            style: TextStyle(color: Colors.black, fontSize: 18),
-                            children: <TextSpan>[
-                              TextSpan(
-                                  text: getItemTotal(controller.cartmeals).toString(),
-                                  style: TextStyle(fontWeight: FontWeight.bold)
-                              )
-                            ]
-                        ),
-                      );
-                    },
-                  )
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                height: 50,
-                color: Colors.white,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    child: Container(
-                      alignment: Alignment.center,
-                      height: 40,
-                      width: 100,
-                      child: Text("Checkout", style: TextStyle(fontSize: 18),),
-                    )
-                ),
-              )
-            ],
-          ),
         ),
       ),
     );

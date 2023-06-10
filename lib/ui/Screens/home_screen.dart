@@ -1,3 +1,4 @@
+import 'package:ecommerce_sqflite/constants/app_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
 import 'package:ecommerce_sqflite/services/meal_sevice.dart';
@@ -18,7 +19,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: scafoldcolor,
-        appBar: MyAppBar(context, controller),
+        appBar: MyAppBar(context, controller,true,true,AppConstants.restaurantname),
         body: Container(
           child: GetBuilder<AppController>(
               init: controller,

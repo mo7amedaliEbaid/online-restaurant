@@ -25,7 +25,7 @@ Widget BottomBar(BuildContext context,AppController controller,MealModel meal){
                   width: size.width * .2,
                   child: Text(
                     "Total Amount",
-                    style: blackstyle,
+                    style: blackindiestyle,
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                   ),

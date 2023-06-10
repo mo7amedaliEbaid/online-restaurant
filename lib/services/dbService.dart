@@ -10,8 +10,6 @@ class DbHandler {
     try {
       var databasesPath = await getDatabasesPath();
       String path = join(databasesPath, 'restaurant.db');
-
-      // open the database
       db = await openDatabase(
         path,
         version: 2,

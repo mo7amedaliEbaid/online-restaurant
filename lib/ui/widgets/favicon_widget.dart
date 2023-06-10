@@ -8,9 +8,11 @@ Widget FavouriteIcon(
     BuildContext context, AppController controller, MealModel meal) {
   return GetBuilder<AppController>(builder: (_) {
     return GestureDetector(
-      onTap: () async{
+      onTap: () async {
         controller.setToFav(meal.id, !meal.fav);
         var result = await controller.addToFav(meal);
+        bool isAdded = controller.isAlreadyInFavLIST(meal.id);
+        isAdded ? controller.removeFromFav(meal.id) : result;
         controller.getFavList();
         var msg = "";
         if (meal.fav) {

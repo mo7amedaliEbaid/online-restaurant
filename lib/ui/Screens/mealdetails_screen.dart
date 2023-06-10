@@ -37,7 +37,7 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: scafoldcolor,
-      appBar: MyAppBar(context, controller),
+      appBar: MyAppBar(context, controller,true,true,AppConstants.restaurantname),
       body: size.width < 480
           ? Column(
               children: <Widget>[
@@ -141,7 +141,8 @@ class _MealDetailsScreenState extends State<MealDetailsScreen> {
                                 .map((e) => DotsIndicator(active, e)),
                             GetBuilder<AppController>(builder: (value) {
                               return Container(
-                                height: 20.0,
+                                height: 30.0,
+                                width: 50,
                                 margin: EdgeInsets.symmetric(
                                     vertical: 10, horizontal: 10),
                                 child: FavouriteIcon(context, controller, meal),
