@@ -1,4 +1,4 @@
-# ecommerce_sqflite
+# net restaurant
 
 A new Flutter project.
 
