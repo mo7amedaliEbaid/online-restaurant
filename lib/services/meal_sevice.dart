@@ -4,6 +4,8 @@ import 'package:ecommerce_sqflite/models/meal_model.dart';
 import 'package:ecommerce_sqflite/services/dbService.dart';
 import 'package:ecommerce_sqflite/services/storageService.dart';
 
+import '../dummy_data/dummy_data.dart';
+
 
 class MealServices {
   DbHandler dbHandler = DbHandler();
@@ -58,7 +60,17 @@ class MealServices {
   Future setItemAsFavourite(id, flag) async {
     return await dbHandler.setItemAsFavourite(id, flag);
   }
+  Future addToFav(MealModel mealsdata) async {
+    return await dbHandler.addTofavs(mealsdata);
+  }
 
+  Future getFavList() async {
+    return await dbHandler.getfavList();
+  }
+
+  removeFromFav(int shopId) async {
+    return await dbHandler.removeFromfavs(shopId);
+  }
   Future addToCart(MealModel mealsdata) async {
     return await dbHandler.addToCart(mealsdata);
   }

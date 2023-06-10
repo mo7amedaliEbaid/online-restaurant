@@ -8,6 +8,7 @@ class AppController extends GetxController {
   MealServices mealServices = MealServices();
   List<MealModel> meals = [];
   List<MealModel> cartmeals = [];
+  List<MealModel> favmeals = [];
   bool isLoading = true;
 
   @override
@@ -37,6 +38,19 @@ class AppController extends GetxController {
       cartmeals.clear();
       list.forEach((element) {
         cartmeals.add(MealModel.fromJson(element));
+      });
+      update();
+
+    } catch (e) {
+      print(e);
+    }
+  }
+  getFavList() async{
+    try {
+      List list = await mealServices.getFavList();
+      favmeals.clear();
+      list.forEach((element) {
+        favmeals.add(MealModel.fromJson(element));
       });
       update();
 
@@ -87,6 +101,21 @@ class AppController extends GetxController {
     mealServices.removeFromCart(shopId);
     int index = cartmeals.indexWhere((element) => element.shopId == shopId);
     cartmeals.removeAt(index);
+    update();
+  }
+  Future addToFav(MealModel item) async {
+    isLoading = true;
+    update();
+    var result = await mealServices.addToFav(item);
+    isLoading = false;
+    update();
+    return result;
+  }
+
+  removeFromFav(int shopId) async {
+    mealServices.removeFromFav(shopId);
+    int index = favmeals.indexWhere((element) => element.shopId == shopId);
+    favmeals.removeAt(index);
     update();
   }
 }
