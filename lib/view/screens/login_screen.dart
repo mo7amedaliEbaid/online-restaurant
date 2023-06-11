@@ -1,9 +1,11 @@
 import 'package:ecommerce_sqflite/constants/app_consts.dart';
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
-import 'package:ecommerce_sqflite/ui/Screens/home_screen.dart';
-import 'package:ecommerce_sqflite/ui/widgets/auth_widgets/buildimage_widget.dart';
-import 'package:ecommerce_sqflite/ui/widgets/auth_widgets/formfields_widgets.dart';
+import 'package:ecommerce_sqflite/view/screens/home_screen.dart';
+import 'package:ecommerce_sqflite/view/screens/register_screen.dart';
+import 'package:ecommerce_sqflite/view/widgets/auth_widgets/buildimage_widget.dart';
+import 'package:ecommerce_sqflite/view/widgets/auth_widgets/formfields_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../widgets/auth_widgets/authbutton_widget.dart';
 import '../widgets/auth_widgets/myseparator_widget.dart';
@@ -18,26 +20,15 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  /* go()
-  async {
-    _changeLoading();
+  gotohome(BuildContext context, String user) async {
     if (_formKey.currentState!.validate()) {
-      await postDataProvider.register.call(usernameController.text.toString(),
-          emailController.text.toString(),
-          passwordController.text.toString())
-          ?
-      Navigator.of(context).push(DismissibleDialog<void>(
-          over: new Over("Successfully Registered!","You are successfully registered",true)
-      ))
-          : Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => CategoryScr()));
-      _changeLoading();
-    }
-  }*/
-  gotohome(BuildContext context) {
-    if (_formKey.currentState!.validate()) {
-      Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => HomeScreen()));
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      var username = prefs.getString("username");
+      username != user && username == null
+          ? Navigator.of(context)
+              .push(MaterialPageRoute(builder: (context) => RegisterScreen()))
+          : Navigator.of(context).pushReplacement(
+              MaterialPageRoute(builder: (context) => HomeScreen()));
     }
   }
 
@@ -77,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(
                     height: 20,
                   ),
-                  UserFormField(context, usernameController),
+                  MyFormField(context, usernameController, true, "User Name"),
                   SizedBox(
                     height: 20,
                   ),
@@ -103,7 +94,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   InkWell(
                       onTap: () {
                         setState(() {
-                          gotohome(context);
+                          gotohome(context,
+                              usernameController.text.trim().toString());
                         });
                       },
                       child: AuthButton("Login", context)),
@@ -116,9 +108,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   GestureDetector(
                       onTap: () {
-                        /*Navigator.of(context).push(
-                        MaterialPageRoute(builder: (context) => RegisterScreen())
-                    );*/
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => RegisterScreen()));
                       },
                       child: AuthButton("Create Account", context)),
                 ],

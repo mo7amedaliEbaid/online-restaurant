@@ -6,6 +6,7 @@ Color lightblue = Color(0xffa3c6d9);
 
 TextEditingController usernameController = TextEditingController();
 TextEditingController passwordController = TextEditingController();
+TextEditingController emailController = TextEditingController();
 
 TextStyle bigwhite =
     TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold);

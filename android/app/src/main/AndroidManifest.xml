@@ -1,9 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.ecommerce_sqflite">
    <application
-        android:label="ecommerce_sqflite"
+        android:label="Online Restaurant"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/mylauncher">
         <activity
             android:name=".MainActivity"
             android:exported="true"

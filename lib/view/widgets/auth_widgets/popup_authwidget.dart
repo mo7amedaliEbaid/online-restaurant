@@ -1,7 +1,8 @@
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
-import 'package:ecommerce_sqflite/ui/Screens/login_screen.dart';
-import 'package:ecommerce_sqflite/ui/Screens/register_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../screens/login_screen.dart';
+import '../../screens/register_screen.dart';
 
 class AuthPopUp<T> extends PopupRoute<T> {
 

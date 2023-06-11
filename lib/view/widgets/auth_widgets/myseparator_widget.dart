@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 Widget MySeparator(){
-  return      Row(
+  return  Row(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       Container(

@@ -2,14 +2,13 @@ import 'package:ecommerce_sqflite/constants/app_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
 import 'package:ecommerce_sqflite/services/meal_sevice.dart';
-import 'package:ecommerce_sqflite/ui/widgets/app_widgets/myappbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../constants/global_consts.dart';
+import '../../view/widgets/app_widgets/myappbar_widget.dart';
 import '../widgets/app_widgets/mealsitem_widget.dart';
-import 'mealdetails_screen.dart';
-import 'cart_screen.dart';
+
 
 class HomeScreen extends StatelessWidget {
   MealServices mealServices = MealServices();

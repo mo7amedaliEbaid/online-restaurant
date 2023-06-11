@@ -21,6 +21,7 @@ class AppController extends GetxController {
     await mealServices.openDB();
     loadItems();
     getCardList();
+    getFavList();
   }
 
   getItem(int id) {

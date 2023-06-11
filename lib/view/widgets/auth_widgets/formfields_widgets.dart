@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 import '../../../constants/app_consts.dart';
 import '../../../constants/global_consts.dart';
 
-Widget UserFormField(
-    BuildContext context, TextEditingController usernameController) {
+Widget MyFormField(BuildContext context, TextEditingController _controller,
+    bool isuer, String hintext) {
   return TextFormField(
     validator: (String? value) {
       if (value == null) {
-        return AppConstants.usernamevalidatin;
+        return isuer
+            ? AppConstants.usernamevalidatin
+            : AppConstants.emailvalidatin;
       } else if (value.isEmpty) {
-        return AppConstants.usernamevalidatin;
+        return isuer
+            ? AppConstants.usernamevalidatin
+            : AppConstants.emailvalidatin;
       }
     },
-    controller: usernameController,
+    controller: _controller,
     decoration: InputDecoration(
       errorStyle: TextStyle(
         color: Colors.black,
@@ -21,13 +25,13 @@ Widget UserFormField(
       ),
       iconColor: Colors.grey,
       prefixIcon: Icon(
-        Icons.nest_cam_wired_stand,
+        isuer ? Icons.nest_cam_wired_stand : Icons.email,
         color: appbarcolor,
       ),
       filled: true,
       fillColor: Colors.white,
       border: InputBorder.none,
-      hintText: 'UserName',
+      hintText: hintext,
     ),
   );
 }
