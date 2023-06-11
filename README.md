@@ -1,16 +1,44 @@
-# net restaurant
+# online restaurant
 
-A new Flutter project.
+By using sqflite package to create database  ,  
+I developed a flutter app and named it online restaurant.    
+The user can order meals and pay for it online.  
+Flutter Pay package is used to implement a payment method.  
+Responsive Ui is implemented for all mobile sizes,orienatation,and webview.    
+Getx state managment is implemented.  
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+## For An Apk
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+https://drive.google.com/drive/folders/1Aj8svzbqV56TZSJqK47qu631dM-Y1dqY
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+## Used Packages
+
+  get: ^4.6.5   
+  sqflite: ^2.0.3   
+  shared_preferences: ^2.1.1   
+  pay: ^1.1.0   
+ 
+ ## Screen Shots  
+  
+  ![alt text](https://github.com/mo7amedaliEbaid/online-restaurant/blob/master/screen_shots/home.jpg?raw=true)  
+   
+   
+   
+  
+  ![alt text](https://github.com/mo7amedaliEbaid/online-restaurant/blob/master/screen_shots/cart.jpg?raw=true)  
+
+ 
+ 
+ 
+![alt text](https://github.com/mo7amedaliEbaid/online-restaurant/blob/master/screen_shots/detailswide.jpg?raw=true)   
+
+
+![alt text](https://github.com/mo7amedaliEbaid/online-restaurant/blob/master/screen_shots/register.jpg?raw=true)   
+
+
+  
+  
+  you can find more screenshots in cities-finder/screen_shots
