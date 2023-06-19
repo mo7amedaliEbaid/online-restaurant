@@ -1,6 +1,6 @@
 # online restaurant
 
-By using sqflite package to create database  ,  
+By using sqflite package to create database ,  
 I developed a flutter app and named it online restaurant.    
 The user can order meals and pay for it online.  
 Flutter Pay package is used to implement a payment method.  
