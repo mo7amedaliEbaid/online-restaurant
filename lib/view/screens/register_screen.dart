@@ -81,6 +81,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     onTap: () {
                       gotohome(
                           context, usernameController.text.trim().toString());
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content:
+                            Text("Congratulations You Signed In Successfully"),
+                        duration: Duration(seconds: 3),
+                      ));
                     },
                     child: AuthButton("Create Account", context),
                   ),
@@ -95,6 +100,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => LoginScreen()));
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text(
+                              "Congratulations You Logged In Successfully"),
+                          duration: Duration(seconds: 3),
+                        ));
                       },
                       child: AuthButton("Login", context)),
                 ],

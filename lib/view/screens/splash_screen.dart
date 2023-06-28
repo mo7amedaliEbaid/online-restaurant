@@ -34,13 +34,21 @@ class _SplashScreenState extends State<SplashScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: scafoldcolor,
-      body: Container(
-        height: size.height,
-        width: size.width,
-        child: Image.asset(
-          'assets/app_images/splash2.jpg',
-          fit: size.width < 480 ? BoxFit.fitHeight : BoxFit.contain,
-        ),
+      body: Stack(
+        children: [
+          Container(
+            height: size.height,
+            width: size.width,
+            child: Image.asset(
+              'assets/app_images/splash2.jpg',
+              fit: size.width < 480 ? BoxFit.fitHeight : BoxFit.contain,
+            ),
+          ),
+          Positioned(
+              top: size.height*.48,
+              left: size.width*.48,
+              child: CircularProgressIndicator(color: Colors.white,))
+        ],
       ),
     );
   }

@@ -1,4 +1,3 @@
-
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
 import 'package:ecommerce_sqflite/controller/app_controller.dart';
 import 'package:ecommerce_sqflite/models/meal_model.dart';
@@ -22,17 +21,21 @@ class _CartScreenState extends State<CartScreen> {
       status: PaymentItemStatus.final_price,
     )
   ];
+
   @override
   void initState() {
     super.initState();
-    _googlePayConfigFuture =
-        PaymentConfiguration.fromAsset('pay.json');
+    _googlePayConfigFuture = PaymentConfiguration.fromAsset('pay.json');
   }
- getItemTotal(List<MealModel> items) {
+
+  getItemTotal(List<MealModel> items) {
     double sum = 0.0;
-    items.forEach((e){sum += e.price;});
+    items.forEach((e) {
+      sum += e.price;
+    });
     return "\$$sum";
   }
+
   void onGooglePayResult(paymentResult) {
     debugPrint(paymentResult.toString());
   }
@@ -42,7 +45,7 @@ class _CartScreenState extends State<CartScreen> {
     final controller = Get.find<AppController>();
     return Scaffold(
       backgroundColor: scafoldcolor,
-      appBar: MyAppBar(context, controller,false,true,"Cart"),
+      appBar: MyAppBar(context, controller, false, true, "Cart"),
       body: Column(
         children: [
           Expanded(
@@ -53,7 +56,10 @@ class _CartScreenState extends State<CartScreen> {
                     return Padding(
                       padding: const EdgeInsets.all(28.0),
                       child: Center(
-                        child: Text("No items found",style: blackindiestyle,),
+                        child: Text(
+                          "No items found",
+                          style: blackindiestyle,
+                        ),
                       ),
                     );
                   }
@@ -75,24 +81,21 @@ class _CartScreenState extends State<CartScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-                child: GetBuilder<AppController>(
-                  builder: (_) {
-                    return RichText(
-                      text: TextSpan(
-                          text: "Total  ",
-                          style: blackstyle,
-                          children: <TextSpan>[
-                            TextSpan(
-                                text: getItemTotal(controller.cartmeals).toString(),
-                                //style: blackstyle
-                            )
-                          ]
-                      ),
-                    );
-                  },
-                )
-            ),
+            Container(child: GetBuilder<AppController>(
+              builder: (_) {
+                return RichText(
+                  text: TextSpan(
+                      text: "Total  ",
+                      style: blackstyle,
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: getItemTotal(controller.cartmeals).toString(),
+                          //style: blackstyle
+                        )
+                      ]),
+                );
+              },
+            )),
             Container(
               alignment: Alignment.centerLeft,
               height: 50,
@@ -100,16 +103,15 @@ class _CartScreenState extends State<CartScreen> {
                   future: _googlePayConfigFuture,
                   builder: (context, snapshot) => snapshot.hasData
                       ? GooglePayButton(
-                    paymentConfiguration: snapshot.data!,
-                    paymentItems: _paymentItems,
-                    type: GooglePayButtonType.buy,
-                    margin: const EdgeInsets.all( 5.0),
-
-                    onPaymentResult: onGooglePayResult,
-                    loadingIndicator: const Center(
-                      child: CircularProgressIndicator(),
-                    ),
-                  )
+                          paymentConfiguration: snapshot.data!,
+                          paymentItems: _paymentItems,
+                          type: GooglePayButtonType.buy,
+                          margin: const EdgeInsets.all(5.0),
+                          onPaymentResult: onGooglePayResult,
+                          loadingIndicator: const Center(
+                            child: CircularProgressIndicator(),
+                          ),
+                        )
                       : Container()),
             )
           ],
@@ -119,7 +121,7 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   Widget generateCart(BuildContext context, MealModel d) {
-    Size size=MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Padding(
       padding: EdgeInsets.all(5.0),
       child: Container(
@@ -129,10 +131,10 @@ class _CartScreenState extends State<CartScreen> {
               bottom: BorderSide(color: Colors.grey.shade200, width: 1.0),
               top: BorderSide(color: Colors.grey.shade200, width: 1.0),
             )),
-        height:size.width<480?size.height*.18:size.height*.3,
+        height: size.width < 480 ? size.height * .18 : size.height * .3,
         child: Row(
           //crossAxisAlignment: CrossAxisAlignment.center,
-         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Container(
               alignment: Alignment.topLeft,
@@ -143,50 +145,55 @@ class _CartScreenState extends State<CartScreen> {
                     BoxShadow(color: Colors.white24, blurRadius: 5.0)
                   ],
                   image: DecorationImage(
-                      image: AssetImage(d.image), fit: size.width<480?BoxFit.fitHeight:BoxFit.fitWidth)),
+                      image: AssetImage(d.image),
+                      fit: size.width < 480
+                          ? BoxFit.fitHeight
+                          : BoxFit.fitWidth)),
             ),
             Expanded(
                 child: Padding(
-                  padding:size.width<480? EdgeInsets.only(top: 30.0, left: 15.0):EdgeInsets.only(top: 30.0, left: 100.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+              padding: size.width < 480
+                  ? EdgeInsets.only(top: 30.0, left: 15.0)
+                  : EdgeInsets.only(top: 30.0, left: 100.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Row(
                     children: <Widget>[
-                      Row(
-                        children: <Widget>[
-                          Expanded(
-                            child: Text(
-                              d.name,
-                              style:blackstyle,
+                      Expanded(
+                        child: Text(
+                          d.name,
+                          style: blackstyle,
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.bottomRight,
+                        child: InkResponse(
+                          onTap: () {
+                            Get.find<AppController>()
+                                .removeFromCart(d.shopId ?? 0);
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text(
+                                    "Item removed from cart successfully")));
+                          },
+                          child: Padding(
+                            padding: EdgeInsets.only(right: 10.0),
+                            child: Icon(
+                              Icons.remove_circle,
+                              color: Colors.red,
                             ),
                           ),
-                          Container(
-                            alignment: Alignment.bottomRight,
-                            child: InkResponse(
-                              onTap: () {
-                                Get.find<AppController>()
-                                    .removeFromCart(d.shopId ?? 0);
-                                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                    content: Text(
-                                        "Item removed from cart successfully")));
-                              },
-                              child: Padding(
-                                padding: EdgeInsets.only(right: 10.0),
-                                child: Icon(
-                                  Icons.remove_circle,
-                                  color: Colors.red,
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 5.0,
-                      ),
-                      Text("Price ${d.price.toString()}"),
+                        ),
+                      )
                     ],
                   ),
-                ))
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text("Price ${d.price.toString()}"),
+                ],
+              ),
+            ))
           ],
         ),
       ),

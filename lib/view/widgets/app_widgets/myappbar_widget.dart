@@ -1,5 +1,7 @@
+import 'package:ecommerce_sqflite/view/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../constants/global_consts.dart';
 import '../../../controller/app_controller.dart';
@@ -50,9 +52,9 @@ PreferredSizeWidget MyAppBar(BuildContext context, AppController controller,
     actions: <Widget>[
       !iscarticon
           ? Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 28.0),
-            child: HomeIcon(context),
-          )
+              padding: const EdgeInsets.symmetric(horizontal: 28.0),
+              child: HomeIcon(context),
+            )
           : Padding(
               padding: size.width < 480
                   ? EdgeInsets.symmetric(horizontal: 10)
@@ -77,7 +79,20 @@ PreferredSizeWidget MyAppBar(BuildContext context, AppController controller,
                       ),
                     ],
                   )),
-            )
+            ),
+      Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+        child: InkWell(
+          onTap: () async {
+            SharedPreferences preferences =
+                await SharedPreferences.getInstance();
+            await preferences.clear();
+            Navigator.of(context).pushReplacement(
+                MaterialPageRoute(builder: (context) => SplashScreen()));
+          },
+          child: Icon(Icons.logout),
+        ),
+      )
     ],
   );
 }
