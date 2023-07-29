@@ -1,10 +1,10 @@
-# online restaurant
+# 👉 online restaurant 👈
 
 By using sqflite package to create database ,  
 I developed a flutter app and named it online restaurant.    
 The user can order meals and pay for it online.  
 Flutter Pay package is used to implement a payment method.  
-Responsive Ui is implemented for all mobile sizes,orienatation,and webview.    
+Responsive Ui is implemented for all mobile sizes,orienatation.    
 Getx state managment is implemented.  
 
 
