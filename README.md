@@ -32,7 +32,7 @@ A Flutter app to display meals, manage orders and sales of a restaurant.
 ## Screen Shots
 
 <br />
-<p float="left">
+<p float="left"> 
 <img src="" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/81951fb05360069f93a7aa4e1f07d22be975b132/screen_shots/cart.jpg" width="220" />
    <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/details.jpg" width="220" />
