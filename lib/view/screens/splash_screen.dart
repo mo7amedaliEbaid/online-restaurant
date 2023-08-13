@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:ecommerce_sqflite/constants/global_consts.dart';
 import 'package:ecommerce_sqflite/view/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () async {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       var username = prefs.getString("username");
+      log(username.toString());
       username == null
           ? Navigator.of(context).push(AuthPopUp<void>())
           : Navigator.of(context).pushReplacement(
