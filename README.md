@@ -25,6 +25,7 @@ A Flutter app to display meals, manage orders and sales of a restaurant.
 <a href="https://github.com/mo7amedaliEbaid/online-restaurant/releases/download/v1.0.0/app-release.apk"><img src="https://playerzon.com/asset/download.png" width="170"></img></a>
 
 <br />
+
 ### Dependencies
 
 - get:
@@ -32,6 +33,7 @@ A Flutter app to display meals, manage orders and sales of a restaurant.
 - shared_preferences: 
 - pay:
 <br />
+
 ### Screen Shots
 
 <br />
