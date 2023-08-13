@@ -2,10 +2,12 @@
 
 A Flutter app to display meals, manage orders and sales of a restaurant.
 <br />
+
 ### State Management
 
 - Getx
 <br />
+
 ### Features
 
 - Offline app (Sqflite database),
@@ -15,7 +17,8 @@ A Flutter app to display meals, manage orders and sales of a restaurant.
 - Google Pay
 - Authentication
 <br />
-###  Demo Video
+
+### Demo Video
 <a href="https://youtu.be/cwgYUk-I4-g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/2560px-Logo_of_YouTube_%282015-2017%29.svg.png" width="170"></img></a>
 <br />
 ### Download App
