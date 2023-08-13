@@ -30,22 +30,24 @@ A Flutter app to display meals and manage orders and sales of a restaurant.
   pay:
 
 ## Screen Shots
-Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots)
+
 <br />
 <p float="left">
 <img src="" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/81951fb05360069f93a7aa4e1f07d22be975b132/screen_shots/cart.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/4c1b0b85084681a9e9af162641120346aa62b16e/screen_shots/cartwide.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/homedark.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/homelight.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/latestlight.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/featureddark.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/searchdark.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/searchresultdark.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/ab41b3045bda1a71646d9a0fc4459174077382bc/updated_screenshots/cartdark.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/ab41b3045bda1a71646d9a0fc4459174077382bc/updated_screenshots/cartlight.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/37395dabb92d19d504be3857cc51f1b7acbf8bf1/updated_screenshots/checkoutl.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/profile2.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/payment.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/orderdetails.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/details.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/fav.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/home.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/login.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/popup.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/register.jpg" width="170" />
+</p>
+
+<br />
+<p float="left">
+<img src="" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/cartwide.jpg" width="270" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/detailswide.jpg" width="270" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/favwide.jpg" width="270" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/a4089da0041ac6a96eb28e26e94c3a77c1eba972/screen_shots/homewide.jpg" width="270" />
 </p>
