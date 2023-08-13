@@ -1,12 +1,12 @@
 ## online restaurant
 
 A Flutter app to display meals, manage orders and sales of a restaurant.
-
-## State Management
+<br />
+### State Management
 
 - Getx
-
-## Features
+<br />
+### Features
 
 - Offline app (Sqflite database),
 - Cart
@@ -14,22 +14,22 @@ A Flutter app to display meals, manage orders and sales of a restaurant.
 - Responsive Ui (All mobile sizes and orientations)
 - Google Pay
 - Authentication
-
-## Demo Video
+<br />
+### Demo Video
 <a href="https://youtu.be/cwgYUk-I4-g"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Logo_of_YouTube_%282015-2017%29.svg/2560px-Logo_of_YouTube_%282015-2017%29.svg.png" width="170"></img></a>
-
-## Download App
+<br />
+### Download App
 <a href="https://github.com/mo7amedaliEbaid/online-restaurant/releases/download/v1.0.0/app-release.apk"><img src="https://playerzon.com/asset/download.png" width="170"></img></a>
 
-
-## Dependencies
+<br />
+### Dependencies
 
 - get:
 - sqflite:
 - shared_preferences: 
 - pay:
-
-## Screen Shots
+<br />
+### Screen Shots
 
 <br />
 <p float="left"> 
