@@ -35,7 +35,7 @@ Fore more screen shots [Here](https://github.com/mo7amedaliEbaid/beautify/blob/c
 <p float="left">
 <img src="" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/81951fb05360069f93a7aa4e1f07d22be975b132/screen_shots/cart.jpg" width="170" />
-   <img src="https://github.com/mo7amedaliEbaid/beautify/blob/c4a408d1fbbaa2536a3c3a167b1ab08365e36c77/updated_screenshots/landing.jpg" width="170" />
+   <img src="https://github.com/mo7amedaliEbaid/net-restaurant/blob/4c1b0b85084681a9e9af162641120346aa62b16e/screen_shots/cartwide.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/homedark.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/homelight.jpg" width="170" />
    <img src="https://github.com/mo7amedaliEbaid/beautify/blob/cd3e7aa4116c8173a4407e689d3bfa6776137868/updated_screenshots/latestlight.jpg" width="170" />
