@@ -24,10 +24,10 @@ A Flutter app to display meals, manage orders and sales of a restaurant.
 
 ## Dependencies
 
-  get:  
-  sqflite: 
-  shared_preferences:
-  pay:
+- get:
+- sqflite:
+- shared_preferences: 
+- pay:
 
 ## Screen Shots
 
