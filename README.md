@@ -1,6 +1,6 @@
 ## online restaurant
 
-A Flutter app to display meals and manage orders and sales of a restaurant.
+A Flutter app to display meals, manage orders and sales of a restaurant.
 
 ## State Management
 
